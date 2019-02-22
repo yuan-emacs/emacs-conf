@@ -1,5 +1,10 @@
 ;;基础配制
 (package-initialize)
+
+;;(require 'org-install)
+;;(require 'ob-tangle)
+;;(org-babel-load-file (expand-file-name "org-file-name.org" user-emacs-directory))
+
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 (defun open-init-file()

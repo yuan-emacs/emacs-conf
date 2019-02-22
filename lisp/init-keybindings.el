@@ -43,5 +43,14 @@
 (global-unset-key (kbd "C-SPC"))
 (global-set-key (kbd "S-SPC") 'set-mark-command)
 
+;; 代码缩进设置快捷键
+(global-set-key (kbd "C-S-f") 'indent-region-or-buffer)
+
+;; Hippie 补全 比如路径补全
+(global-set-key (kbd "s-/") 'hippie-expand)
+
+;; 设置两个空格和四个空格切换
+(global-set-key (kbd "C-c t i") 'my-toggle-web-indent)
 
 (provide 'init-keybindings)
+
