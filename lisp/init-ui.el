@@ -19,5 +19,10 @@
 ;;设置默认开启全屏
 (setq initial-frame-alist (quote ((fullscreen . maximized))))
 
+;; sppedbar setup
+(require 'sr-speedbar);;这句话是必须的
+(add-hook 'after-init-hook '(lambda () (sr-speedbar-toggle)));;开启程序即启用
+(add-hook 'after-init-hook '(lambda () (tabbar-ruler-up)));; 让 emacs 有tabbar 方便选用tab
+
 (provide 'init-ui)
 

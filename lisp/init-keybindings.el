@@ -52,5 +52,13 @@
 ;; 设置两个空格和四个空格切换
 (global-set-key (kbd "C-c t i") 'my-toggle-web-indent)
 
+;; 设置copy当前行
+(global-set-key (kbd "C-d") 'duplicate-line)
+
+;; 根据文件名和文件内容查找对应的文件
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
 (provide 'init-keybindings)
 
