@@ -26,6 +26,7 @@
 		      popwin
 		      web-mode
 		      tide
+		      sr-speedbar
 		      
                       ) "Default packages")
 
