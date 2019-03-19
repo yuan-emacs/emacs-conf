@@ -170,4 +170,13 @@
   (next-line 1)
   (yank))
 
+;; emacs 中添加 slime
+
+(setq inferior-lisp-program "/usr/bin/sbcl");
+(add-to-list 'load-path "/opt/slime")
+(require 'slime)
+(slime-setup)
+(require 'slime-autoloads)
+(slime-setup '(slime-fancy slime-banner))
+
 (provide 'init-better-defaults)
