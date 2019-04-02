@@ -1,3 +1,9 @@
+;; 设置自动保存
+(require 'auto-save)
+(auto-save-enable)
+(setq auto-save-silent t)
+(setq auto-save-delete-trailing-whitespace t)
+
 ;;去掉滚动时产生响声
 (setq ring-bell-function 'ignore)
 
@@ -5,7 +11,7 @@
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
 ;;安装主题
-(load-theme 'monokai 1)
+(load-theme 'solarized-dark t)
 
 ;; 括号自动补全
 (smartparens-global-mode t)
@@ -14,6 +20,16 @@
 ;;(electric-indent-mode 1)
 					;开启全局 Company补全
 (global-company-mode 1)
+
+;;(auto-complete-mode 1)
+(global-auto-complete-mode t)
+
+;; 用ac-slime 实现 lisp 代码提示
+(require 'ac-slime)
+ (add-hook 'slime-mode-hook 'set-up-slime-ac)
+ (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+ (eval-after-load "auto-complete"
+   '(add-to-list 'ac-modes 'slime-repl-mode))
 
 ;;去掉emacs自动备份文件
 (setq-default make-backup-files nil)
@@ -25,7 +41,7 @@
 (require 'hungry-delete)
 (global-hungry-delete-mode)
 
-					; Swiper & Counsel 优化 M-X 提示
+;; Swiper & Counsel 优化 M-X 提示
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)

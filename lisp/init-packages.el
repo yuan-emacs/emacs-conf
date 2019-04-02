@@ -9,9 +9,15 @@
 
 ;; Add Packages
 (defvar my/packages '(
-                      ;; --- Auto-completion ---
+		      ;; --- Auto-completion ---
                       company
+		      auto-complete
+		      ac-slime
+		      ;; theme setup
 		      monokai-theme
+		      solarized-theme
+		      zenburn-theme
+		      ;; other set
 		      hungry-delete
 		      swiper
 		      counsel
