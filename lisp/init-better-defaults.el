@@ -2,7 +2,7 @@
 (require 'auto-save)
 (auto-save-enable)
 (setq auto-save-silent t)
-(setq auto-save-delete-trailing-whitespace t)
+;;(setq auto-save-delete-trailing-whitespace t)
 
 ;;去掉滚动时产生响声
 (setq ring-bell-function 'ignore)
@@ -51,6 +51,7 @@
       (append
        '(("\\.js\\'" . js2-mode))
        '(("\\.html\\'" . web-mode))
+       '(("\\.lisp\\'" . lisp-interaction-mode))
        auto-mode-alist))
 
 ;; exec *.js file
