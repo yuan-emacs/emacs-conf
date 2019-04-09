@@ -43,5 +43,40 @@
 ;;   (insert ";; "))
 ;; (define-key (kbd "C-M-j") 'insert-break-line)
 
+;; sql setting
+
+(load-file (expand-file-name "~/.emacs.d/lisp/mysql/sql.el"))
+(load-file (expand-file-name "~/.emacs.d/lisp/mysql/mysql.el"))
+(setq sql-connection-alist
+      '((pool-a
+         (sql-product 'mysql)
+         (sql-server "test.db.zmaxis.com")
+         (sql-user "forge")
+         (sql-password "Zhangmen1dui1")
+         (sql-database "zm-audio")
+         (sql-port 3306))
+	))
+
+
+(defun sql-connect-preset (name)
+  "Connect to a predefined SQL connection listed in `sql-connection-alist'"
+  (eval `(let ,(cdr (assoc name sql-connection-alist))
+	   (flet ((sql-get-login (&rest what)))
+	     (sql-product-interactive sql-product)))))
+
+(defun sql-local ()
+  "Connect to the local MySQL server"
+  (interactive)
+  (sql-connect-preset 'pool-a)
+  (delete-other-windows))
+
+(define-key global-map [f10] 'sql-local)
+
+;; ssh 连接mysql
+;; (defadvice sql-mysql (around sql-mysql-around activate)
+;;   "SSH to linux, then connect"
+;;   (let ((default-directory "/ssh:host.myhost.com:"))
+;;     ad-do-it))
+
 
 (load-file custom-file)
