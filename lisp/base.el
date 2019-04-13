@@ -7,9 +7,9 @@
 (tool-bar-mode -1)
 (scroll-bar-mode t)
 
-;显示行号
+					;显示行号
 (global-linum-mode t)
- ;更改光标样式
+					;更改光标样式
 (setq-default cursor-type 'bar)
 
 ;;关闭启动画面
@@ -115,6 +115,7 @@
 ;; '' 补全优化
 (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
 (sp-local-pair 'lisp-interaction-mode "'" nil :actions nil)
+(sp-local-pair 'lisp-mode "'" nil :actions nil)
 ;; 以上也可以这么干：(sp-local-pair '(emacs-lisp-mode lisp-interaction-mode) "'" nil :actions nil)
 
 ;; 解决在代码块中让两边的括号都高亮起来
@@ -124,6 +125,9 @@
         (t (save-excursion
              (ignore-errors (backward-up-list))
              (funcall fn)))))
+
+;; 解决在lisp-mode 下括号不高亮
+(show-paren-mode t)
 
 ;; 删除dos系统中的  \r\M
 (defun remove-dos-eol ()
@@ -159,6 +163,8 @@
 (global-set-key (kbd "C-h C-k") 'find-function-on-key)
 
 ;; 开启打开最近文件记录
+(recentf-mode t)
+(setq recentf-max-menu-items 100)
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 ;;解决emacs ctrl-space与输入法冲突

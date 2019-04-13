@@ -1,9 +1,9 @@
 ;; js idea
 (setq auto-mode-alist
       (append
-       '(("\\.js\\'" . js2-mode))
+       '(("\\.js\\'" . js2-mode))	
        '(("\\.html\\'" . web-mode))
-       '(("\\.lisp\\'" . lisp-interaction-mode))
+       '(("\\.lisp\\'" . lisp-mode))
        auto-mode-alist))
 
 ;; nodejs setting

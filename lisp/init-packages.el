@@ -35,6 +35,12 @@
 		      sr-speedbar
 		      projectile
 		      tabbar
+		      ;; vue setting
+		      lsp-mode
+		      lsp-vue
+		      
+		      company-lsp
+		      company-quickhelp
 		      
                       ) "Default packages")
 
