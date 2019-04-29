@@ -16,7 +16,7 @@
 (require 'init-org)
 (require 'init-auto-save)
 ;; (require 'init-mysql)
-(load-file (expand-file-name "~/.emacs.d/local/mysql-config.el"))
+;;(load-file (expand-file-name "~/.emacs.d/local/mysql-config.el"))
 (require 'base)
 (require 'init-hipple)
 (require 'init-js)
