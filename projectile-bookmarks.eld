@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/disk/dev/work/lisp/emacs/emacs-study/" "~/disk/dev/zhangmen/wechat_voice/code/zm-audio-service/")
+("~/.emacs.d/")

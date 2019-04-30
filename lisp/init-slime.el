@@ -7,8 +7,8 @@
 
 ;; emacs 中添加 slime
 
-(setq inferior-lisp-program "/usr/bin/sbcl");
-(add-to-list 'load-path "/opt/slime")
+(setq inferior-lisp-program "/usr/local/bin/sbcl");
+(add-to-list 'load-path "/usr/local/lisp/slime-2.23")
 (require 'slime)
 (slime-setup)
 (require 'slime-autoloads)

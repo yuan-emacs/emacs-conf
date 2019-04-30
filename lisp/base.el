@@ -12,6 +12,10 @@
 					;更改光标样式
 (setq-default cursor-type 'bar)
 
+					; org 模式设置注释后有颜色设置
+(require 'org)
+(setq org-src-fontify-natively t)
+
 ;;关闭启动画面
 (setq inhibit-splash-screen 1)
 
@@ -19,7 +23,15 @@
 (global-hl-line-mode t)
 
 ;;设置字体
-(set-default-font "Consolas-16")
+;; (set-default-font "Consolas-16")   ; linux can set
+
+(set-face-attribute
+ 'default nil :font "Consolas 16")
+;; Chinese Font 配制中文字体
+(dolist (charset '(kana han symbol cjk-misc bopomofo))
+  (set-fontset-font (frame-parameter nil 'font)
+                    charset
+                    (font-spec :family "PingFang SC" :size 16)))
 
 ;;设置默认开启全屏
 (setq initial-frame-alist (quote ((fullscreen . maximized))))
@@ -64,6 +76,7 @@
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 30)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 ;; 内容有修改时自动执行
 (global-auto-revert-mode t)
@@ -161,11 +174,6 @@
 (global-set-key (kbd "C-h C-f") 'find-function)
 (global-set-key (kbd "C-h C-v") 'find-variable)
 (global-set-key (kbd "C-h C-k") 'find-function-on-key)
-
-;; 开启打开最近文件记录
-(recentf-mode t)
-(setq recentf-max-menu-items 100)
-(global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 ;;解决emacs ctrl-space与输入法冲突
 (global-unset-key (kbd "C-SPC"))
