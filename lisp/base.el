@@ -19,7 +19,7 @@
 (global-hl-line-mode t)
 
 ;;设置字体
-(set-default-font "Consolas-14")
+(set-default-font "Consolas-16")
 
 ;;设置默认开启全屏
 (setq initial-frame-alist (quote ((fullscreen . maximized))))
@@ -70,7 +70,7 @@
 
 ;; 禁止自动保存和备份
 (setq make-backup-files nil)
-(setq auto-save-default nil)
+(setq auto-save-default t)
 
 (require 'popwin)
 (popwin-mode t)

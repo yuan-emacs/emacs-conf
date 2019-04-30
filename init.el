@@ -14,8 +14,8 @@
 ;; package management
 (require 'init-packages)
 (require 'init-org)
-(require 'init-auto-save)
-;; (require 'init-mysql)
+;;(require 'init-auto-save)
+;;(require 'init-mysql)
 (load-file (expand-file-name "~/.emacs.d/local/mysql-config.el"))
 (require 'base)
 (require 'init-hipple)
@@ -24,6 +24,7 @@
 (require 'init-swiper)
 (require 'init-tide)
 (require 'init-comment)
+(require 'init-git-emacs)
 ;; (require 'init-vue)			
 
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
