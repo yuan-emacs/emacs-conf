@@ -78,21 +78,35 @@
 (setq recentf-max-menu-items 30)
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
-;; 内容有修改时自动执行
+;; 内容有修改时自动更新文件
 (global-auto-revert-mode t)
 
 ;; 禁止自动保存和备份
 (setq make-backup-files nil)
-(setq auto-save-default nil)
+;; (setq auto-save-default t)
+(require 'real-auto-save)
+(setq real-auto-save-interval 2)	; 2s 钟后自动保存
+;; 设置自动保存的文件类型
+(add-hook 'org-mode-hook 'real-auto-save-mode)
+(add-hook 'js2-mode-hook 'real-auto-save-mode)
+(add-hook 'web-mode-hook 'real-auto-save-mode)
+(add-hook 'emacs-lisp-mode-hook 'real-auto-save-mode)
+(add-hook 'text-mode-hook 'real-auto-save-mode)
+(add-hook 'lisp-mode-hook 'real-auto-save-mode)
 
 (require 'popwin)
 (popwin-mode t)
 
+;; 设置缩略词,eg:输完 yuan 输入回车、空格即可显示设置文本
 (abbrev-mode t)
 (define-abbrev-table 'global-abbrev-table '(
-					    ("today" "today is ")
-					    ("syso" "System.out.println()")
+					    ;; yuan -> zhangyuanyuan
+					    ("yuan" "zhangyuanyuan")
+					    ;; day
+					    ("day" "today is ")
 					    ))
+
+
 ;; 简化yes or no  修改成 y or n
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -112,6 +126,9 @@
         (indent-buffer)
         (message "Indent buffer.")))))
 
+;; 代码缩进设置快捷键
+(global-set-key (kbd "C-S-f") 'indent-region-or-buffer)
+
 ;; 删除和复制时总是询问是否要删除和拷贝
 (setq dired-recursive-deletes 'always)
 (setq dired-recursive-copies 'always)
@@ -121,7 +138,7 @@
 (with-eval-after-load 'dired
   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
 
-;; 启用 dired-x ()C-c C-j) to use
+;; 启用 dired-x C-x C-j) to use
 (require 'dired-x)
 (setq dired-dwim-target 1)
 
@@ -164,7 +181,6 @@
 ;; 设置copy当前行
 (global-set-key (kbd "C-d") 'duplicate-line)
 
-
 ;;; 快捷键
 
 ;;给配制文件加快捷键
@@ -179,13 +195,26 @@
 (global-unset-key (kbd "C-SPC"))
 (global-set-key (kbd "S-SPC") 'set-mark-command)
 
-;; 代码缩进设置快捷键
-(global-set-key (kbd "C-S-f") 'indent-region-or-buffer)
-
 ;; 根据文件名和文件内容查找对应的文件
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
+;; 在mac打开该文件所在文件夹
+(global-set-key (kbd "C-x C-d") 'reveal-in-osx-finder)
+
+;; 设置默认字符集
+(set-language-environment "UTF-8")
+
+;; 把下拉提示选项上下键改成 C-n 和 C-p
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "M-n") nil)
+  (define-key company-active-map (kbd "M-p") nil)
+  (define-key company-active-map (kbd "C-n") #'company-select-next)
+  (define-key company-active-map (kbd "C-p") #'company-select-previous))
+
+;; 全局找文件
+(require 'helm-ag)
+(global-set-key (kbd "C-c C-h") 'helm-do-ag-project-root)
 
 (provide 'base)

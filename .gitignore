@@ -2,3 +2,6 @@ auto-save-list/*
 elpa/*
 recentf
 local/*
+.DS_Store
+.idea/*
+abbrev_defs

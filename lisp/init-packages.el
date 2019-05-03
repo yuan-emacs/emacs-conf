@@ -13,6 +13,7 @@
                       company
 		      auto-complete
 		      ac-slime
+		      real-auto-save
 		      ;; theme setup
 		      monokai-theme
 		      solarized-theme
@@ -29,6 +30,8 @@
 		      nodejs-repl
 		      ;;shell edit
 		      exec-path-from-shell
+		      expand-region
+		      iedit
 		      popwin
 		      web-mode
 		      tide
@@ -41,6 +44,21 @@
 		      
 		      company-lsp
 		      company-quickhelp
+
+		      ;; mac
+		      reveal-in-osx-finder
+		      ;; org-mode to html
+		      htmlize
+
+		      org-pomodoro
+		      helm-ag
+		      flycheck
+		      el-get
+		      yasnippet
+		      auto-yasnippet
+		      ;; add cask to manage packages
+		      cask
+		      pallet
 		      
                       ) "Default packages")
 
