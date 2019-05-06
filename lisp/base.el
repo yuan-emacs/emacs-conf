@@ -23,15 +23,9 @@
 (global-hl-line-mode t)
 
 ;;设置字体
-;; (set-default-font "Consolas-16")   ; linux can set
+(set-default-font "Source Code Variable-18")   ; linux can set
 
-(set-face-attribute
- 'default nil :font "Monaco 16")
 ;; Chinese Font 配制中文字体
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-  (set-fontset-font (frame-parameter nil 'font)
-                    charset
-                    (font-spec :family "PingFang SC" :size 16)))
 
 ;;设置默认开启全屏
 (setq initial-frame-alist (quote ((fullscreen . maximized))))

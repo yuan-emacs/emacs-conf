@@ -1,0 +1,1 @@
+("~/yuan/study_space/lisp/Spacemacs-rocks/" "~/.emacs.d/")
