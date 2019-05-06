@@ -1,1 +1,0 @@
-("~/.emacs.d/" "~/.cask/" "~/yuan/study_space/lisp/emacs-study/")
