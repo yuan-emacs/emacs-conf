@@ -23,7 +23,7 @@
 (global-hl-line-mode t)
 
 ;;设置字体
-(set-default-font "Source Code Variable-18")   ; linux can set
+(set-default-font "Source Code Variable-16")   ; linux can set
 
 ;; Chinese Font 配制中文字体
 

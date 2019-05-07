@@ -59,7 +59,10 @@
 		      ;; add cask to manage packages
 		      cask
 		      pallet
-		      
+
+		      neotree
+		      all-the-icons
+
                       ) "Default packages")
 
 (setq package-selected-packages my/packages)

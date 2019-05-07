@@ -23,9 +23,14 @@
 (require 'init-swiper)
 (require 'init-tide)
 (require 'init-comment)
+(require 'tmp)
 ;;(require 'init-git-emacs)
 ;; (require 'init-vue)			
 
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 
 (load-file custom-file)
+
+
+
+
