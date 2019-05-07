@@ -3,4 +3,4 @@
 (global-set-key (kbd "M-1") 'neotree-toggle)
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 ;; (setq neo-smart-open t)
-(provide 'tmp)
+(provide 'init-neotree)

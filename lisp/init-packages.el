@@ -9,6 +9,7 @@
 
 ;; Add Packages
 (defvar my/packages '(
+		      use-package
 		      ;; --- Auto-completion ---
                       company
 		      auto-complete
@@ -40,8 +41,12 @@
 		      tabbar
 		      ;; vue setting
 		      lsp-mode
-		      lsp-vue
-		      
+		      css-mode
+		      scss-mode
+		      ;;lsp-clients
+		      ;;lsp-vue
+		      lsp-ui
+		      company-box
 		      company-lsp
 		      company-quickhelp
 
@@ -59,7 +64,7 @@
 		      ;; add cask to manage packages
 		      cask
 		      pallet
-
+		      ;; file tree use neotree
 		      neotree
 		      all-the-icons
 
