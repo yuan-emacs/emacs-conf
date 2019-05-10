@@ -1,6 +1,7 @@
-(source "gnu" "http://elpa.emacs-china.org/gnu/")
-(source "melpa" "http://elpa.emacs-china.org/melpa/")
+(source gnu)
+(source melpa)
 
+(depends-on "2048-game")
 (depends-on "ac-slime")
 (depends-on "all-the-icons")
 (depends-on "auto-yasnippet")
@@ -50,6 +51,7 @@
 (depends-on "sr-speedbar")
 (depends-on "swiper")
 (depends-on "tabbar")
+(depends-on "tern")
 (depends-on "tide")
 (depends-on "use-package")
 (depends-on "web-mode")
