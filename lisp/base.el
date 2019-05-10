@@ -30,6 +30,10 @@
 ;;设置默认开启全屏
 (setq initial-frame-alist (quote ((fullscreen . maximized))))
 
+;; 全局找文件
+(require 'helm-ag)
+(global-set-key (kbd "C-c C-h") 'helm-do-ag-project-root)
+
 ;; sppedbar setup
 (require 'sr-speedbar);;这句话是必须的
 (add-hook 'after-init-hook '(lambda () (sr-speedbar-toggle)));;开启程序即启用
@@ -211,9 +215,6 @@
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
-;; 全局找文件
-(require 'helm-ag)
-(global-set-key (kbd "C-c C-h") 'helm-do-ag-project-root)
 
 ;; 格式化json
 (global-set-key (kbd "C-c <f12>") 'json-pretty-print-buffer)
