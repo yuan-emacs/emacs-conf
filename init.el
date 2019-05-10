@@ -5,6 +5,11 @@
 ;;(require 'ob-tangle)
 ;;(org-babel-load-file (expand-file-name "org-file-name.org" user-emacs-directory))
 
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)    ; 类似于 package-initialize
+(require 'pallet)
+(pallet-mode t)      ; 激活 pallet, 在安装包时将 Cask 文件写入相应信息
+
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 (defun open-init-file()
@@ -12,7 +17,7 @@
   (find-file "~/.emacs.d/init.el"))
 
 ;; package management
-(require 'init-packages)
+;;(require 'init-packages)
 (require 'init-org)
 ;; (require 'init-mysql)
 ;;(load-file (expand-file-name "~/.emacs.d/local/mysql-config.el"))

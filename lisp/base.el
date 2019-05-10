@@ -197,6 +197,10 @@
 ;; 在mac打开该文件所在文件夹
 (global-set-key (kbd "C-x C-d") 'reveal-in-osx-finder)
 
+;; Find Executable Path on OS X
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
 ;; 设置默认字符集
 (set-language-environment "UTF-8")
 
@@ -210,5 +214,8 @@
 ;; 全局找文件
 (require 'helm-ag)
 (global-set-key (kbd "C-c C-h") 'helm-do-ag-project-root)
+
+;; 格式化json
+(global-set-key (kbd "C-c <f12>") 'json-pretty-print-buffer)
 
 (provide 'base)
