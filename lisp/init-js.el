@@ -68,6 +68,8 @@
               (lambda ()
                 (setq imenu-create-index-function 'js2-imenu-make-index)))
 
+
+
 (global-set-key (kbd "M-s i") 'counsel-imenu)
 
 (require 'expand-region)
@@ -86,10 +88,16 @@
 ;; js 文件加代码检测
 (add-hook 'js2-mode-hook 'flycheck-mode)
 
+;;
+;(add-to-list 'load-path "/opt/tern/emacs")
+;(autoload 'tern-mode "tern.el" nil t)
+(require 'tern)
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+
 ;; js 中加入代码自动补全
-(require 'yasnippet)
+;;(require 'yasnippet)
 ;; (yas-global-mode 1)
-(yas-reload-all)
-(add-hook 'prog-mode-hook #'yas-minor-mode)
+;;(yas-reload-all)
+;;(add-hook 'prog-mode-hook #'yas-minor-mode)
 
 (provide 'init-js)
