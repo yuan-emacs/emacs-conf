@@ -53,7 +53,7 @@
  '(org-pomodoro-long-break-length 40)
  '(package-selected-packages
    (quote
-    (rjsx-mode tern 2048-game use-package company auto-complete ac-slime real-auto-save color-theme-sanityinc-tomorrow monokai-theme solarized-theme zenburn-theme hungry-delete swiper counsel smartparens js2-mode js2-refactor nodejs-repl exec-path-from-shell expand-region iedit popwin web-mode tide sr-speedbar projectile tabbar lsp-mode css-mode scss-mode lsp-vue lsp-ui company-box company-lsp company-quickhelp reveal-in-osx-finder htmlize org-pomodoro helm-ag flycheck el-get yasnippet auto-yasnippet neotree all-the-icons)))
+    (aa-edit-mode vue-mode company-pollen 0blayout rjsx-mode tern 2048-game use-package company auto-complete ac-slime real-auto-save color-theme-sanityinc-tomorrow monokai-theme solarized-theme zenburn-theme hungry-delete swiper counsel smartparens js2-mode js2-refactor nodejs-repl exec-path-from-shell expand-region iedit popwin web-mode tide sr-speedbar projectile tabbar lsp-mode css-mode scss-mode lsp-vue lsp-ui company-box company-lsp company-quickhelp reveal-in-osx-finder htmlize org-pomodoro helm-ag flycheck el-get yasnippet auto-yasnippet neotree all-the-icons)))
  '(popwin:popup-window-position (quote right))
  '(popwin:popup-window-width 60)
  '(pos-tip-background-color "#073642")

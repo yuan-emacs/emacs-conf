@@ -16,7 +16,6 @@
 (global-set-key (kbd "C-c r") 'org-capture)
 
 (require 'org-pomodoro)
-
 (provide 'init-org)
 
 

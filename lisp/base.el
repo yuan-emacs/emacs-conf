@@ -6,7 +6,6 @@
 ;; 关闭 默认的 toolbar
 (tool-bar-mode -1)
 (scroll-bar-mode t)
-
 					;显示行号
 (global-linum-mode t)
 					;更改光标样式
@@ -55,12 +54,11 @@
 ;;(electric-indent-mode 1)
 ;;开启全局 Company补全
 (global-company-mode 1)
-
-;;(auto-complete-mode 1)
 (global-auto-complete-mode t)
 
-;;去掉emacs自动备份文件
+;; 禁止自动保存和备份
 (setq-default make-backup-files nil)
+(setq-default auto-save-default nil)
 
 ;; emacs 删除文字优化 mac中使用
 (delete-selection-mode t)
@@ -79,9 +77,7 @@
 ;; 内容有修改时自动更新文件
 (global-auto-revert-mode t)
 
-;; 禁止自动保存和备份
-(setq make-backup-files nil)
-;; (setq auto-save-default t)
+;; 文件自动保存
 (require 'real-auto-save)
 (setq real-auto-save-interval 2)	; 2s 钟后自动保存
 ;; 设置自动保存的文件类型
