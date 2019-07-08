@@ -6,7 +6,7 @@
 (require 'pallet)
 (pallet-mode t)      ; 激活 pallet, 在安装包时将 Cask 文件写入相应信息
 
-(add-to-list 'load-path "./configs")
+(add-to-list 'load-path "~/.emacs.d/configs")
 
 (defun open-init-file()
   (interactive)
@@ -23,3 +23,5 @@
 (require 'base-company)
 
 (require 'hungry-del)
+
+(require 'helm-conf)

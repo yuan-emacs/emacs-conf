@@ -23,6 +23,8 @@
 ;; 括号自动补全
 (smartparens-global-mode t)
 
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode) ;开始自动括号匹配
+
 ;; 禁止自动保存和备份
 (setq-default make-backup-files nil)
 (setq-default auto-save-default nil)
@@ -39,10 +41,17 @@
 (setq dired-recursive-deletes 'always)
 (setq dired-recursive-copies 'always)
 
+(set-default-font "Consolas-17")
+
+(setq inhibit-splash-screen t)		;关闭启动动画
+
 ;;清除回车时进入一个新目录创建一个新的缓冲区
 (put 'dired-find-alternate-file 'disabled nil)
 (with-eval-after-load 'dired
   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
+
+(delete-selection-mode t)		; emacs 在mac下删除文字优化
+(global-auto-revert-mode t)             ; 内容有修改时自动更新文件
 
 ;; find-fcuntion find-variable find-function-on-key
 (global-set-key (kbd "C-h C-f") 'find-function)
