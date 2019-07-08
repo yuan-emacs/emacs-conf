@@ -1,6 +1,0 @@
-(require 'neotree)
-(require 'all-the-icons)
-(global-set-key (kbd "M-1") 'neotree-toggle)
-(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-;; (setq neo-smart-open t)
-(provide 'init-neotree)
