@@ -41,9 +41,9 @@
 (setq dired-recursive-deletes 'always)
 (setq dired-recursive-copies 'always)
 
-(set-default-font "Consolas-17")
+(set-default-font "Courier New-16" t t)
 
-(setq inhibit-splash-screen t)		;关闭启动动画
+(setq inhibit-splash-screen t)	;关闭启动动画
 
 ;;清除回车时进入一个新目录创建一个新的缓冲区
 (put 'dired-find-alternate-file 'disabled nil)

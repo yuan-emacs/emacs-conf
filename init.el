@@ -6,6 +6,13 @@
 (require 'pallet)
 (pallet-mode t)      ; 激活 pallet, 在安装包时将 Cask 文件写入相应信息
 
+;; 全局变量
+(setq load-prefer-newer t)
+(defvar home-path "~/.emacs.d/")
+(defvar savefile-dir (expand-file-name "savefile" home-path))
+
+(message "savefile dir is %s" savefile-dir)
+
 (add-to-list 'load-path "~/.emacs.d/configs")
 
 (defun open-init-file()
@@ -25,3 +32,7 @@
 (require 'hungry-del)
 
 (require 'helm-conf)
+
+(require 'theme-conf)
+
+(require 'projectile-conf)
