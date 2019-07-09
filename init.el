@@ -41,3 +41,6 @@
 
 (require 'auto-save-conf)
 
+(require  'ivy-conf)
+
+(require 'bookmark-conf)
