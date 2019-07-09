@@ -36,3 +36,8 @@
 (require 'theme-conf)
 
 (require 'projectile-conf)
+
+(require 'popwin-conf)
+
+(require 'auto-save-conf)
+

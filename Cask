@@ -1,6 +1,7 @@
 (source gnu)
 (source melpa)
 
+(depends-on "ac-slime")
 (depends-on "bind-key")
 (depends-on "cask")
 (depends-on "company")
@@ -26,6 +27,7 @@
 (depends-on "popwin")
 (depends-on "prodigy")
 (depends-on "projectile")
+(depends-on "real-auto-save")
 (depends-on "s")
 (depends-on "smartparens")
 (depends-on "smex")

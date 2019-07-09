@@ -70,4 +70,38 @@
 (global-unset-key (kbd "C-SPC"))
 (global-set-key (kbd "<f12>") 'set-mark-command)
 
+;; 启用 dired-x C-x C-j) to use
+(require 'dired-x)
+(setq dired-dwim-target 1)
+
+;; 删除dos系统中的  \r\M
+(defun remove-dos-eol ()
+  "Replace DOS eolns CR LF with Unix eolns CR"
+  (interactive)
+  (goto-char (point-min))
+  (while (search-forward "\r" nil t) (replace-match "")))
+
+;; 增强Copy功能
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank))
+
+;; 设置copy当前行
+(global-set-key (kbd "C-d") 'duplicate-line)
+
+;; 设置注释
+(defun my-comment-or-uncomment-region (beg end &optional arg)  
+  (interactive (if (use-region-p)  
+                   (list (region-beginning) (region-end) nil)  
+                 (list (line-beginning-position)  
+                       (line-beginning-position 2))))  
+  (comment-or-uncomment-region beg end arg))
+
+(global-set-key (kbd "C-c C-/") 'my-comment-or-uncomment-region)
+
 (provide 'base)
