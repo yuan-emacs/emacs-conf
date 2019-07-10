@@ -188,4 +188,10 @@
 (require 'ansi-color)
 (add-hook 'compilation-filter-hook #'base-colorize-compilation-buffer)
 
+;; 设置 tilte 显示文件全名
+(setq frame-title-format
+      '("" invocation-name " filename - " (:eval (if (buffer-file-name)
+                                            (abbreviate-file-name (buffer-file-name))
+                                          "%b"))))
+
 (provide 'base)
