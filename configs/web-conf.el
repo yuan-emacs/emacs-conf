@@ -2,6 +2,24 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
+(require 'nodejs-repl)
+;; 官方说使用 nvm 要这么配制，发现在 linux 下不用配也可以正常使用，所以就注释掉了
+;; (defun nvm-which ()
+;;   (let* ((shell (concat (getenv "SHELL") " -l -c 'nvm which'"))
+;;          (output (shell-command-to-string shell)))
+;;     (cadr (split-string output "[\n]+" t))))
+
+;; (setq nodejs-repl-command #'nvm-which)
+
+;; 定义一些node 环境下常用的快捷键,其实不常用。
+
+(add-hook 'js-mode-hook
+          (lambda ()
+            (define-key js-mode-map (kbd "C-x C-e") 'nodejs-repl-send-last-expression)
+            (define-key js-mode-map (kbd "C-c C-j") 'nodejs-repl-send-line)
+            (define-key js-mode-map (kbd "C-c C-r") 'nodejs-repl-send-region)
+            (define-key js-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
+            (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)))
 
 (require 'web-mode)
 
@@ -28,7 +46,6 @@
   (sp-local-tag "%" "<% "  " %>")
   (sp-local-tag "=" "<%= " " %>")
   (sp-local-tag "#" "<%# " " %>"))
-
 
 
 (provide 'web-conf)

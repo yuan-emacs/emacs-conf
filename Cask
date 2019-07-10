@@ -27,6 +27,7 @@
 (depends-on "lsp-vue")
 (depends-on "magit")
 (depends-on "multiple-cursors")
+(depends-on "nodejs-repl")
 (depends-on "nyan-mode")
 (depends-on "org-pomodoro")
 (depends-on "pallet")

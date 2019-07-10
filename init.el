@@ -50,3 +50,7 @@
 (require 'crux-conf)
 
 (require 'youdao-conf)
+
+(require 'org-conf)
+
+(require 'magit-conf)

@@ -82,8 +82,8 @@
 
 ;;解决emacs ctrl-space与输入法冲突
 (global-unset-key (kbd "C-SPC"))
-(global-set-key (kbd "<f12>") 'set-mark-command)
-
+(global-set-key (kbd "<f2>") 'set-mark-command)
+(global-set-key (kbd "<f12>") 'menu-bar-mode)
 ;; 启用 dired-x C-x C-j) to use
 (require 'dired-x)
 (setq dired-dwim-target 1)
