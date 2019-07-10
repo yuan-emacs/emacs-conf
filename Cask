@@ -2,6 +2,7 @@
 (source melpa)
 
 (depends-on "ac-slime")
+(depends-on "beacon")
 (depends-on "bind-key")
 (depends-on "cask")
 (depends-on "company")
@@ -36,4 +37,5 @@
 (depends-on "swiper")
 (depends-on "use-package")
 (depends-on "web-mode")
+(depends-on "which-key")
 (depends-on "yasnippet")

@@ -22,8 +22,9 @@
 
 ;; 括号自动补全
 (smartparens-global-mode t)
-
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode) ;开始自动括号匹配
+;; '' 补全优化
+(sp-local-pair '(emacs-lisp-mode lisp-interaction-mode lisp-mode) "'" nil :actions nil)
 
 ;; 禁止自动保存和备份
 (setq-default make-backup-files nil)
@@ -105,5 +106,15 @@
 (global-set-key (kbd "C-c C-/") 'my-comment-or-uncomment-region)
 
 (global-set-key (kbd "C-=") 'er/expand-region)
+
+
+;;; ------------------- ui setting -------------------------------
+;; 光标后面有光发出
+(require 'beacon)
+(beacon-mode t)
+
+;; 提醒你显示哪些 keybindings
+(require 'which-key)
+(which-key-mode t)
 
 (provide 'base)

@@ -11,8 +11,6 @@
 (defvar home-path "~/.emacs.d/")
 (defvar savefile-dir (expand-file-name "savefile" home-path))
 
-(message "savefile dir is %s" savefile-dir)
-
 (add-to-list 'load-path "~/.emacs.d/configs")
 
 (defun open-init-file()
@@ -44,3 +42,6 @@
 (require  'ivy-conf)
 
 (require 'bookmark-conf)
+
+(require 'web-conf)
+
