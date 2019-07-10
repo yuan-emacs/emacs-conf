@@ -45,7 +45,7 @@
 
 (require 'web-conf)
 
-(require 'ido-conf)
+;;(require 'ido-conf)
 
 (require 'crux-conf)
 
@@ -54,3 +54,5 @@
 (require 'org-conf)
 
 (require 'magit-conf)
+
+(require  'lsp-conf)
