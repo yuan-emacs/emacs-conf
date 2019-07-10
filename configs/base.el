@@ -17,12 +17,25 @@
 ;;去掉滚动时产生响声
 (setq ring-bell-function 'ignore)
 
-;;开始自动括号匹配
-(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
-
 ;; 括号自动补全
 (smartparens-global-mode t)
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode) ;开始自动括号匹配
+
+;; 解决在代码块中让两边的括号都高亮起来
+(define-advice show-paren-function (:around (fn) fix-show-paren-function)
+  "Highlight enclosing parens."
+  (cond ((looking-at-p "\\s(") (funcall fn))
+        (t (save-excursion
+             (ignore-errors (backward-up-list))
+             (funcall fn)))))
+
+;; 解决在lisp-mode 下括号不高亮
+(show-paren-mode t)
+
+;; 在大括号内 Retrun 的时候，光标更智能放在对应的位置。
+(electric-indent-mode t)
+(electric-pair-mode t)
+
 ;; '' 补全优化
 (sp-local-pair '(emacs-lisp-mode lisp-interaction-mode lisp-mode) "'" nil :actions nil)
 
@@ -75,6 +88,10 @@
 (require 'dired-x)
 (setq dired-dwim-target 1)
 
+;; 在成对括号之间跳转
+(global-set-key (kbd "M-n") 'forward-sexp)
+(global-set-key (kbd "M-p") 'backward-sexp)
+
 ;; 删除dos系统中的  \r\M
 (defun remove-dos-eol ()
   "Replace DOS eolns CR LF with Unix eolns CR"
@@ -96,17 +113,42 @@
 (global-set-key (kbd "C-d") 'duplicate-line)
 
 ;; 设置注释
-(defun my-comment-or-uncomment-region (beg end &optional arg)  
-  (interactive (if (use-region-p)  
-                   (list (region-beginning) (region-end) nil)  
-                 (list (line-beginning-position)  
-                       (line-beginning-position 2))))  
+(defun my-comment-or-uncomment-region (beg end &optional arg)
+  (interactive (if (use-region-p)
+                   (list (region-beginning) (region-end) nil)
+                 (list (line-beginning-position)
+                       (line-beginning-position 2))))
   (comment-or-uncomment-region beg end arg))
 
 (global-set-key (kbd "C-c C-/") 'my-comment-or-uncomment-region)
 
 (global-set-key (kbd "C-=") 'er/expand-region)
 
+(global-set-key (kbd "RET") 'newline-and-indent)
+
+
+;; 代码缩进设置
+(defun indent-buffer()
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(defun indent-region-or-buffer()
+  (interactive)
+  (save-excursion
+    (if (region-active-p)
+        (progn
+          (whitespace-cleanup)
+          (indent-region (region-beginning) (region-end))
+          (message "Indent selected region."))
+      (progn
+        (whitespace-cleanup)
+        (indent-buffer)
+        (message "Indent buffer.")))))
+
+;; 代码缩进设置快捷键
+(global-set-key (kbd "S-SPC f i") 'indent-region-or-buffer)
+;; 格式化json
+(global-set-key (kbd "S-SPC f j") 'json-pretty-print-buffer)
 
 ;;; ------------------- ui setting -------------------------------
 ;; 光标后面有光发出
@@ -116,5 +158,34 @@
 ;; 提醒你显示哪些 keybindings
 (require 'which-key)
 (which-key-mode t)
+
+;; whitespace-mode config
+(require 'whitespace)
+(setq whitespace-line-column 130) ;; limit line length
+(setq whitespace-style '(face tabs empty trailing lines-tail))
+
+;; saner regex syntax
+(require 're-builder)
+(setq reb-re-syntax 'string)
+
+;; Compilation from Emacs
+(defun base-colorize-compilation-buffer ()
+  "Colorize a compilation mode buffer."
+  (interactive)
+  ;; we don't want to mess with child modes such as grep-mode, ack, ag, etc
+  (when (eq major-mode 'compilation-mode)
+    (let ((inhibit-read-only t))
+      (ansi-color-apply-on-region (point-min) (point-max)))))
+
+(require 'compile)
+(setq compilation-ask-about-save nil  ; Just save before compiling
+      compilation-always-kill t       ; Just kill old compile processes before
+                                        ; starting the new one
+      compilation-scroll-output 'first-error ; Automatically scroll to first
+                                        ; error
+      )
+
+(require 'ansi-color)
+(add-hook 'compilation-filter-hook #'base-colorize-compilation-buffer)
 
 (provide 'base)

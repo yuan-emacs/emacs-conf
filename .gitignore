@@ -12,3 +12,5 @@ session*
 smex-items
 bookmarks
 transient/*
+url/*
+savefile/*

@@ -45,3 +45,8 @@
 
 (require 'web-conf)
 
+(require 'ido-conf)
+
+(require 'crux-conf)
+
+(require 'youdao-conf)
