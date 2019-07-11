@@ -56,3 +56,5 @@
 (require 'magit-conf)
 
 (require  'lsp-conf)
+
+(require 'edit-conf)

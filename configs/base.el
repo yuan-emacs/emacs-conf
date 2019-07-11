@@ -126,7 +126,6 @@
 
 (global-set-key (kbd "RET") 'newline-and-indent)
 
-
 ;; 代码缩进设置
 (defun indent-buffer()
   (interactive)
