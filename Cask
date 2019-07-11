@@ -26,6 +26,7 @@
 (depends-on "iedit")
 (depends-on "imenu-anywhere")
 (depends-on "ivy")
+(depends-on "js2-mode")
 (depends-on "lsp-mode")
 (depends-on "lsp-treemacs")
 (depends-on "lsp-ui")
