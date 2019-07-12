@@ -9,7 +9,7 @@
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (helm-projectile xterm-color highlight-symbol iedit emmet-mode company-box lsp-treemacs nodejs-repl youdao-dictionary imenu-anywhere crux ido-completing-read+ which-key beacon swiper ivy ac-slime real-auto-save spacemacs-theme helm-ag org-pomodoro hungry-delete lsp-vue lsp-ui lsp-mode company yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff)))
+    (jump-tree helm-projectile xterm-color highlight-symbol iedit emmet-mode company-box lsp-treemacs nodejs-repl youdao-dictionary imenu-anywhere crux ido-completing-read+ which-key beacon swiper ivy ac-slime real-auto-save spacemacs-theme helm-ag org-pomodoro hungry-delete lsp-vue lsp-ui lsp-mode company yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff)))
  '(web-mode-attr-indent-offset 2)
  '(web-mode-attr-value-indent-offset 2)
  '(web-mode-code-indent-offset 2)

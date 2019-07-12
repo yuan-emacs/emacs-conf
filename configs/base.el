@@ -56,8 +56,8 @@
 (setq dired-recursive-copies 'always)
 
 
-;;(set-default-font "Courier New-16" t t)
-(set-default-font "Consolas-16" t t)
+(set-default-font "Courier New-16" t t)
+;(set-default-font "Consolas-16" t t)
 
 (setq inhibit-splash-screen t)	;关闭启动动画
 
@@ -155,6 +155,8 @@
 (global-set-key (kbd "C-c b p") 'beginning-of-buffer)
 (global-set-key (kbd "C-c b n") 'end-of-buffer)
 
+(require 'jump-tree)
+(global-jump-tree-mode t)
 
 ;;; ------------------- ui setting -------------------------------
 ;; 光标后面有光发出
@@ -198,6 +200,6 @@
 (setq frame-title-format
       '("" invocation-name " filename - " (:eval (if (buffer-file-name)
                                             (abbreviate-file-name (buffer-file-name))
-                                          "%b"))))
+					    "%b"))))
 
 (provide 'base)

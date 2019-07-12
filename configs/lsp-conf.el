@@ -1,12 +1,18 @@
-
-;; 配制 vue html css less js 用 lsp实现代码提示
 (use-package lsp-mode
   :ensure t
   :commands lsp
-  :hook ((js-mode css-mode less-css-mode scss-mode web-mode) . lsp)
+  :hook ((typescript-mode js-mode css-mode less-css-mode scss-mode web-mode) . lsp)
   :init
   (setq lsp-prefer-flymake nil)
   (require 'lsp-clients))
+
+;; (use-package lsp-mode
+;;   :ensure t
+;;   :commands lsp
+;;   :hook ((js-mode css-mode less-css-mode scss-mode) . lsp)
+;;   :init
+;;   (setq lsp-prefer-flymake nil)
+;;   (require 'lsp-clients))
 
 (use-package lsp-ui :ensure t :commands lsp-ui-mode)
 
@@ -35,5 +41,7 @@
   :config (setq emmet-move-cursor-between-quotes t)
   ;;(setq emmet-expand-jsx-className? t)  ; 设置jsx 语法
   (setq emmet-self-closing-tag-style " /"))
+
+(setq lsp-enable-snippet nil)
 
 (provide 'lsp-conf)
