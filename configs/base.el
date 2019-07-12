@@ -149,6 +149,11 @@
 ;; 格式化json
 (global-set-key (kbd "S-SPC f j") 'json-pretty-print-buffer)
 
+;; set beginning-of buffer
+(global-set-key (kbd "S-SPC b p") 'beginning-of-buffer)
+(global-set-key (kbd "S-SPC b n") 'end-of-buffer)
+
+
 ;;; ------------------- ui setting -------------------------------
 ;; 光标后面有光发出
 (require 'beacon)
