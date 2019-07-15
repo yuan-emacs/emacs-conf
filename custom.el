@@ -7,15 +7,19 @@
  '(custom-safe-themes
    (quote
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+ '(js-indent-level 2)
+ '(js2-mode-indent-ignore-first-tab nil)
  '(package-selected-packages
    (quote
-    (jump-tree helm-projectile xterm-color highlight-symbol iedit emmet-mode company-box lsp-treemacs nodejs-repl youdao-dictionary imenu-anywhere crux ido-completing-read+ which-key beacon swiper ivy ac-slime real-auto-save spacemacs-theme helm-ag org-pomodoro hungry-delete lsp-vue lsp-ui lsp-mode company yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff)))
+    (hl-todo jump-tree helm-projectile xterm-color highlight-symbol iedit emmet-mode company-box lsp-treemacs nodejs-repl youdao-dictionary imenu-anywhere crux ido-completing-read+ which-key beacon swiper ivy ac-slime real-auto-save spacemacs-theme helm-ag org-pomodoro hungry-delete lsp-vue lsp-ui lsp-mode company yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff)))
  '(web-mode-attr-indent-offset 2)
  '(web-mode-attr-value-indent-offset 2)
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
- '(web-mode-enable-auto-expanding t)
+ '(web-mode-enable-auto-expanding nil)
+ '(web-mode-enable-auto-pairing nil)
  '(web-mode-enable-current-element-highlight t)
+ '(web-mode-markup-indent-offset 2)
  '(web-mode-sql-indent-offset 2)
  '(xterm-color-names
    ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#eee8d5"])

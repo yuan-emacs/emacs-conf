@@ -58,3 +58,5 @@
 (require  'lsp-conf)
 
 (require 'edit-conf)
+
+(require 'todo-conf)

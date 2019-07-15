@@ -34,7 +34,7 @@
 (add-to-list 'auto-mode-alist
 	     '("/\\(views\\|html\\|theme\\|templates\\)/.*\\.php\\'" . web-mode))
 
-(setq web-mode-enable-auto-pairing nil)
+(setq web-mode-enable-auto-pairing t)
 
 (sp-with-modes '(web-mode)
   (sp-local-pair "%" "%"

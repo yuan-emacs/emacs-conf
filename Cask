@@ -20,6 +20,7 @@
 (depends-on "helm-ag")
 (depends-on "helm-projectile")
 (depends-on "highlight-symbol")
+(depends-on "hl-todo")
 (depends-on "htmlize")
 (depends-on "hungry-delete")
 (depends-on "idle-highlight-mode")
