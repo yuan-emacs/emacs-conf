@@ -11,13 +11,14 @@
  '(js2-mode-indent-ignore-first-tab nil)
  '(package-selected-packages
    (quote
-    (hl-todo jump-tree helm-projectile xterm-color highlight-symbol iedit emmet-mode company-box lsp-treemacs nodejs-repl youdao-dictionary imenu-anywhere crux ido-completing-read+ which-key beacon swiper ivy ac-slime real-auto-save spacemacs-theme helm-ag org-pomodoro hungry-delete lsp-vue lsp-ui lsp-mode company yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff)))
- '(web-mode-attr-indent-offset 2)
- '(web-mode-attr-value-indent-offset 2)
+    (cal-china-x hl-todo jump-tree helm-projectile xterm-color highlight-symbol iedit emmet-mode company-box lsp-treemacs nodejs-repl youdao-dictionary imenu-anywhere crux ido-completing-read+ which-key beacon swiper ivy ac-slime real-auto-save spacemacs-theme helm-ag org-pomodoro hungry-delete lsp-vue lsp-ui lsp-mode company yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff)))
+ '(web-mode-attr-indent-offset nil)
+ '(web-mode-attr-value-indent-offset nil)
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
  '(web-mode-enable-auto-expanding nil)
  '(web-mode-enable-auto-pairing nil)
+ '(web-mode-enable-block-face t)
  '(web-mode-enable-current-element-highlight t)
  '(web-mode-markup-indent-offset 2)
  '(web-mode-sql-indent-offset 2)

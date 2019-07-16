@@ -4,6 +4,7 @@
 (depends-on "ac-slime")
 (depends-on "beacon")
 (depends-on "bind-key")
+(depends-on "cal-china-x")
 (depends-on "cask")
 (depends-on "company")
 (depends-on "company-box")

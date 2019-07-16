@@ -23,6 +23,10 @@
 (setq custom-file (expand-file-name "./custom.el" user-emacs-directory))
 (load-file custom-file)
 
+;; Linux specific settings
+(when (eq system-type 'gnu/linux)
+  (require 'linux-conf))
+
 (require 'base)
 
 (require 'base-company)

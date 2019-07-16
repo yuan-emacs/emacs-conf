@@ -56,8 +56,8 @@
 (setq dired-recursive-copies 'always)
 
 
-(set-default-font "Courier New-16" t t)
-;(set-default-font "Consolas-16" t t)
+;(set-default-font "Courier New 16" t t)
+(set-default-font "Consolas-16" t t)
 
 (setq inhibit-splash-screen t)	;关闭启动动画
 
