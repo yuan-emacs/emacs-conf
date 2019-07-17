@@ -10,6 +10,7 @@
 (setq load-prefer-newer t)
 (defvar home-path "~/.emacs.d/")
 (defvar savefile-dir (expand-file-name "savefile" home-path))
+(defvar special-dir (expand-file-name "special" home-path))
 
 (add-to-list 'load-path "~/.emacs.d/configs")
 
@@ -20,7 +21,7 @@
 ;;给配制文件加快捷键
 (global-set-key (kbd "<f4>") 'open-init-file)
 
-(setq custom-file (expand-file-name "./custom.el" user-emacs-directory))
+(setq custom-file (expand-file-name "custom.el" special-dir))
 (load-file custom-file)
 
 ;; Linux specific settings
@@ -28,6 +29,8 @@
   (require 'linux-conf))
 
 (require 'base)
+
+(require 'abbrev-conf)
 
 (require 'base-company)
 
