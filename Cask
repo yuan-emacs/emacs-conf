@@ -8,6 +8,7 @@
 (depends-on "cask")
 (depends-on "company")
 (depends-on "company-box")
+(depends-on "company-tabnine")
 (depends-on "crux")
 (depends-on "dash")
 (depends-on "drag-stuff")

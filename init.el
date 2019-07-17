@@ -67,3 +67,5 @@
 (require 'edit-conf)
 
 (require 'todo-conf)
+
+(require 'tabnine-conf)
