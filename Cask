@@ -19,6 +19,7 @@
 (depends-on "flycheck")
 (depends-on "flycheck-cask")
 (depends-on "helm-ag")
+(depends-on "helm-etags-plus")
 (depends-on "helm-projectile")
 (depends-on "highlight-symbol")
 (depends-on "hl-todo")

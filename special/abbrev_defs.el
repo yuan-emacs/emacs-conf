@@ -193,7 +193,10 @@
 
 (define-abbrev-table 'web-mode-abbrev-table
   '(
-    ("log" "console.log()" nil 2)
+    ("deb" "debugger" nil 1)
+    ("fetch" "this.$Fetch()" nil 1)
+    ("log" "console.log()" nil 4)
+    ("und" "undefined" nil 1)
    ))
 
 (define-abbrev-table 'xref--xref-buffer-mode-abbrev-table '())
