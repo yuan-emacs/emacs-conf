@@ -28,6 +28,9 @@
 (when (eq system-type 'gnu/linux)
   (require 'linux-conf))
 
+(when (eq system-type 'darwin)
+  (require 'mac-conf))
+
 (require 'base)
 
 (require 'abbrev-conf)

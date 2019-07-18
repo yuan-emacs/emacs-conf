@@ -11,7 +11,7 @@
  '(js2-mode-indent-ignore-first-tab nil)
  '(package-selected-packages
    (quote
-    (company-tabnine helm-etags-plus cal-china-x hl-todo jump-tree helm-projectile xterm-color highlight-symbol iedit emmet-mode company-box lsp-treemacs nodejs-repl youdao-dictionary imenu-anywhere crux ido-completing-read+ which-key beacon swiper ivy ac-slime real-auto-save spacemacs-theme helm-ag org-pomodoro hungry-delete lsp-vue lsp-ui lsp-mode company yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff)))
+    (reveal-in-osx-finder company-tabnine helm-etags-plus cal-china-x hl-todo jump-tree helm-projectile xterm-color highlight-symbol iedit emmet-mode company-box lsp-treemacs nodejs-repl youdao-dictionary imenu-anywhere crux ido-completing-read+ which-key beacon swiper ivy ac-slime real-auto-save spacemacs-theme helm-ag org-pomodoro hungry-delete lsp-vue lsp-ui lsp-mode company yasnippet web-mode use-package smex smartparens projectile prodigy popwin pallet nyan-mode multiple-cursors magit idle-highlight-mode htmlize flycheck-cask expand-region exec-path-from-shell drag-stuff)))
  '(web-mode-attr-indent-offset nil)
  '(web-mode-attr-value-indent-offset nil)
  '(web-mode-code-indent-offset 2)

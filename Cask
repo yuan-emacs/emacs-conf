@@ -47,6 +47,7 @@
 (depends-on "prodigy")
 (depends-on "projectile")
 (depends-on "real-auto-save")
+(depends-on "reveal-in-osx-finder")
 (depends-on "s")
 (depends-on "smartparens")
 (depends-on "smex")
