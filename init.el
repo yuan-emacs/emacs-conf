@@ -72,3 +72,5 @@
 (require 'todo-conf)
 
 (require 'tabnine-conf)
+
+(require 'treemacs-conf)
