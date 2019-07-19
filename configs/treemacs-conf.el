@@ -55,12 +55,12 @@
        (treemacs-git-mode 'simple))))
   :bind
   (:map global-map
-        ("M-0"       . treemacs-select-window)
-        ("C-x t 1"   . treemacs-delete-other-windows)
-        ("C-x t t"   . treemacs)
-        ("C-x t B"   . treemacs-bookmark)
-        ("C-x t C-t" . treemacs-find-file)
-        ("C-x t M-t" . treemacs-find-tag)))
+        ("C-c t w"       . treemacs-select-window)
+        ("C-c t 1"   . treemacs-delete-other-windows)
+        ("C-c t t"   . treemacs)
+        ("C-c t b"   . treemacs-bookmark)
+        ("C-c t f" . treemacs-find-file)
+        ("C-c t T" . treemacs-find-tag)))
 
 (use-package treemacs-projectile
   :after treemacs projectile
@@ -74,5 +74,12 @@
 (use-package treemacs-magit
   :after treemacs magit
   :ensure t)
+
+(use-package lsp-treemacs
+  :ensure t
+  :bind
+  (:map global-map
+	("C-c l e" . lsp-treemacs-errors-list)
+	("C-c l f" . lsp-treemacs-quick-fix)))
 
 (provide 'treemacs-conf)
