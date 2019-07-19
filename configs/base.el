@@ -202,4 +202,12 @@
                                             (abbreviate-file-name (buffer-file-name))
 					    "%b"))))
 
+;; improved window navigation with ace-window
+(global-set-key (kbd "s-w") 'ace-window)
+(global-set-key [remap other-window] 'ace-window)
+
+(global-set-key (kbd "C-x O") (lambda ()
+                                (interactive)
+                                (other-window -1))) ;; back one
+
 (provide 'base)
