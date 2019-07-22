@@ -48,6 +48,7 @@
 (depends-on "projectile")
 (depends-on "real-auto-save")
 (depends-on "reveal-in-osx-finder")
+(depends-on "rjsx-mode")
 (depends-on "s")
 (depends-on "smartparens")
 (depends-on "smex")

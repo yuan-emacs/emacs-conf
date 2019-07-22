@@ -28,6 +28,7 @@
 (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
@@ -47,5 +48,12 @@
   (sp-local-tag "=" "<%= " " %>")
   (sp-local-tag "#" "<%# " " %>"))
 
+(require 'rjsx-mode)
+(add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . rjsx-mode))
+
+(with-eval-after-load 'rjsx-mode
+  (define-key rjsx-mode-map "<" nil)
+  (define-key rjsx-mode-map (kbd "C-d") nil)
+  (define-key rjsx-mode-map ">" nil))
 
 (provide 'web-conf)
